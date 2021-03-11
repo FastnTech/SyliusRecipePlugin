@@ -1,0 +1,14 @@
+fastntech_recipe_admin_index:
+    resource: |
+        alias: fastntech_recipe.recipe
+        section: admin
+        templates: "@SyliusAdmin/Crud"
+        except: ['show']
+        redirect: update
+        grid: fastntech_recipe_grid
+        permission: true
+        vars:
+            all: 
+                header: Tarifler
+                subheader: FastnTech Tarifler
+    type: sylius.resource

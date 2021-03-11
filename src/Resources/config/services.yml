@@ -1,0 +1,11 @@
+parameters:
+services:
+    fastntech_recipe.form.type.recipe:
+        class: FastnTech\RecipePlugin\Form\Type\RecipeType
+        tags:
+            - { name: form.type, alias: fastntech_form_recipe }
+
+    fastntech_recipe.event_listener.admin.menu_builder:
+        class: FastnTech\RecipePlugin\Menu\AdminMenuListener
+        tags:
+            - { name: kernel.event_listener, event: sylius.menu.admin.main, method: addAdminMenuItems }

@@ -1,0 +1,21 @@
+fastntech_recipe_partial:
+    path: /recipe_render_partial
+    methods: [GET]
+    defaults:
+        _controller: fastntech_recipe.controller.recipe:indexAction
+        _sylius:
+            paginate: false
+            limit: 3
+            template: $template
+
+fastntech_recipe_detail:
+    path: /recipe/{slug}
+    methods: [GET]
+    defaults:
+        _controller: fastntech_recipe.controller.recipe:showAction
+        _sylius:
+            template: "@FastnTechRecipePlugin/Shop/show.html.twig"
+            repository:
+                method: findBySlug
+                arguments:
+                    - $slug

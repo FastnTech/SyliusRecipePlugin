@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: FastnTech\RecipePlugin
+        psr4_prefix: FastnTech\RecipePlugin

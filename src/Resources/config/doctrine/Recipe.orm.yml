@@ -1,0 +1,38 @@
+FastnTech\RecipePlugin\Entity\Recipe:
+    type: mappedSuperclass
+    table: fastntech_recipe
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            label: 'Tarif'
+            type: string
+            length: 100
+        slug:
+            type: string
+            length: 200
+        category:
+            type: string
+            length: 100
+        list:
+            type: text
+            length: 5000
+        content:
+            type: text
+            length: 5000
+        createdAt:
+            type: datetime
+            column: created_at
+            gedmo:
+                timestampable:
+                    on: create
+        updatedAt:
+            type: datetime
+            column: updated_at
+            nullable: true
+            gedmo:
+                timestampable:
+                    on: update

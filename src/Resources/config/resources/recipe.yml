@@ -1,0 +1,11 @@
+sylius_resource:
+    resources:
+        fastntech_recipe.recipe:
+            driver: doctrine/orm
+            classes:
+                model: FastnTech\RecipePlugin\Entity\Recipe
+                form: FastnTech\RecipePlugin\Form\Type\RecipeType
+                interface: FastnTech\RecipePlugin\Entity\RecipeInterface
+                repository: FastnTech\RecipePlugin\Doctrine\ORM\RecipeRepository
+                controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+                factory: Sylius\Component\Resource\Factory\Factory

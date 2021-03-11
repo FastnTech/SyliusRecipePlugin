@@ -1,0 +1,41 @@
+sylius_grid:
+    grids:
+        fastntech_recipe_grid:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: "%fastntech_recipe.model.recipe.class%"
+            sorting:
+                id: desc
+            fields:
+                id:
+                    type: string
+                    sortable: ~
+                title:
+                    type: string
+                    sortable: ~
+                    label: 'Başlık'
+                slug:
+                    type: string
+                    sortable: ~
+                    label: 'URL'
+                updatedAt:
+                    type: datetime
+                    sortable: ~
+                    label: 'Güncellenme Tarihi'
+            filters:
+                title:
+                    type: string
+                    label: 'Ad Soyad'
+                slug:
+                    type: string
+                    label: 'URL'
+            actions:
+                item:
+                    delete:
+                        type: delete
+                    update:
+                        type: update
+                main:
+                    create:
+                        type: create
